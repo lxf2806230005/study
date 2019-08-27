@@ -2,6 +2,7 @@
 # 建立简单神经网络
 import tensorflow as tf
 
+# model-01
 # 输入数据 (常量数据，1x2 的 ， 体积和重量)
 x = tf.constant([[0.7, 0.5]])
 # 权重参数 
@@ -16,7 +17,7 @@ with tf.Session() as sess:
     sess.run(init)
     print("y : %s" %sess.run(y))
     
-    
+# model——02 
 # 输入数据 (使用placeholder 占位，进行动态传入数据) shape=(1, 2) 传入1行2列数据
 x = tf.placeholder(tf.float32, shape=(1, 2))
 # 权重参数 
@@ -32,7 +33,8 @@ with tf.Session() as sess:
     #   这里要动态传入数据值
     print("y : %s" %sess.run(y, feed_dict={x: [[0.7, 0.5]]}))
     
-    
+	
+# model——03
 # 输入数据 （使用placeholder占位，shape=（None，2）输入多组数据）
 x = tf.placeholder(tf.float32, shape=(None, 2))
 # 设置权重参数 输入数据为2 ，输出为3， 偏差值为1， 随机种子为1
